@@ -2,15 +2,35 @@
 /node_modules
 
 # Build output
+/dist
 /public/dist
 
 # Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Misc
-.DS_Store
+# Environment variables
+.env
+.env.*
+!.env.example
+!.env.*.example
 
 # Local secrets
 public/firebase-config.js
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Test reports
+/coverage
+/reports
+# IDE files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
