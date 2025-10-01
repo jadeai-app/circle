@@ -81,16 +81,25 @@ logoutButton?.addEventListener('click', async () => {
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        // User is signed in
-        if(authContainer) authContainer.style.display = 'none';
-        if(userDashboard) userDashboard.style.display = 'block';
-        if(userEmailElement) userEmailElement.textContent = user.email;
-        showMessage(''); // Clear any previous messages
+        // User is signed in, check for authorization
+        const isAuthorized = window.authorizedUsers && window.authorizedUsers.includes(user.email);
+
+        if (isAuthorized) {
+            // User is authorized
+            if (authContainer) authContainer.style.display = 'none';
+            if (userDashboard) userDashboard.style.display = 'block';
+            if (userEmailElement) userEmailElement.textContent = user.email;
+            showMessage(''); // Clear any previous messages
+        } else {
+            // User is not authorized
+            showMessage('Access Denied. You are not authorized to use this application.');
+            signOut(auth); // Sign out unauthorized user
+        }
     } else {
         // User is signed out
-        if(authContainer) authContainer.style.display = 'block';
-        if(userDashboard) userDashboard.style.display = 'none';
-        if(userEmailElement) userEmailElement.textContent = '';
+        if (authContainer) authContainer.style.display = 'block';
+        if (userDashboard) userDashboard.style.display = 'none';
+        if (userEmailElement) userEmailElement.textContent = '';
     }
 });
 
