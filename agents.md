@@ -1,4 +1,4 @@
-8# CircleSafe Autonomous AI Agent System: Prime Directive & Operational Protocol
+## CircleSafe Autonomous AI Agent System: Prime Directive & Operational Protocol
 
 
 ## Executive Summary
