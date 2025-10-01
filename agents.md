@@ -644,97 +644,1319 @@ Root Configuration Files
 
 ├── README.md                    # One-command setup, contribution guidelines, accessibility statement, PWA validation
 
-├── CONTRIBUTING.md              # Detailed contribution workflow and code standards
+<details>
+<summary><code>├── CONTRIBUTING.md</code> - Detailed contribution workflow and code standards</summary>
+
+### How to Contribute to CircleSafe
+
+First and foremost, thank you for your interest in CircleSafe. Every contribution, from a simple bug report to a major feature, is invaluable. As this project is primarily managed by an autonomous AI system, human contributions are integrated through a structured process to ensure consistency, quality, and alignment with the project's Prime Directive.
+
+#### Code of Conduct
+
+All participants in the CircleSafe community are expected to adhere to our [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project's core team.
+
+#### Contribution Channels
+
+*   **Bug Reports:** Use the "Bug Report" issue template to report issues. Provide as much detail as possible, including steps to reproduce, environment details, and expected vs. actual behavior.
+*   **Feature Requests:** Use the "Feature Request" issue template to propose new features. Provide a clear and detailed explanation of the feature, its potential impact, and the problem it solves.
+*   **Security Vulnerabilities:** Please **do not** open a public issue for security vulnerabilities. Refer to the [Security Policy](./SECURITY.md) for instructions on how to report them responsibly.
+
+#### Development Workflow
+
+1.  **Fork & Branch**: Fork the repository and create a new branch from `main` with a descriptive name: `feat/new-feature` or `fix/issue-description`.
+2.  **Develop**: Make your changes, adhering to the coding style and conventions outlined below.
+3.  **Document**: Add or update JSDoc comments for all new or modified functions and components. Update relevant documentation in the `/docs` directory if you are changing functionality.
+4.  **Test**:
+    *   Add unit tests for any new logic, ensuring you maintain or increase the existing test coverage (currently at 100%).
+    *   Run the full test suite locally to ensure your changes haven't introduced regressions: `npm run test:unit`.
+5.  **Lint & Format**: Ensure your code is clean by running the linter and formatter: `npm run lint && npm run prettier:fix`.
+6.  **Commit**: Use the [Conventional Commits](https://www.conventionalcommits.org/) specification for your commit messages. This is mandatory for the automated release process.
+    *   Example: `feat(auth): implement biometric authentication`
+    *   Example: `fix(dashboard): correct layout shift on mobile devices`
+7.  **Pull Request**: Push your branch to your fork and open a Pull Request against the `main` branch.
+    *   The PR title should also follow the Conventional Commits format.
+    *   The PR description should clearly explain the "what" and "why" of your changes. Link to any relevant issues.
+
+#### Pull Request Validation
+
+Upon submission, your PR will be subjected to a rigorous, automated review process governed by the CircleSafe faculties:
+
+1.  **CI Pipeline**: A GitHub Action will trigger, running all checks defined in `.github/workflows/ci.yml`. This includes tests, security scans, and performance audits. The PR cannot be merged if any of these checks fail.
+2.  **AI Faculty Review**:
+    *   **Guardian**: Scans for security vulnerabilities and policy violations.
+    *   **Validator**: Verifies functional correctness and test coverage.
+    *   **Architect**: Ensures changes align with the system's long-term architectural vision.
+    *   **Builder**: Checks for adherence to coding standards and maintainability.
+3.  **Merge**: Once all checks pass and the faculties reach a positive consensus, the PR will be automatically merged.
+
+</details>
 
 ├── CHANGELOG.md                 # Version history and release notes
 
-├── LICENSE                      # MIT with explicit patent grant
+<details>
+<summary><code>├── LICENSE</code> - MIT License</summary>
 
-├── SECURITY.md                  # Security policy and reporting procedures
+Copyright (c) 2024 CircleSafe Autonomous Systems
 
-├── CODE_OF_CONDUCT.md           # Community guidelines and behavior standards
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+</details>
+
+<details>
+<summary><code>├── SECURITY.md</code> - Security policy and reporting procedures</summary>
+
+### Security Policy for CircleSafe
+
+The CircleSafe team takes security vulnerabilities very seriously. We appreciate your efforts to responsibly disclose your findings, and we will make every effort to acknowledge your contributions.
+
+#### Supported Versions
+
+As CircleSafe operates on a continuous deployment model managed by our autonomous AI system, only the latest version is supported. The system automatically updates and patches itself, so please ensure any vulnerability you report is reproducible on the current production version.
+
+| Version | Supported          |
+| ------- | ------------------ |
+| Latest  | :white_check_mark: |
+| < 1.0   | :x:                |
+
+#### Reporting a Vulnerability
+
+**Please do not report security vulnerabilities through public GitHub issues.**
+
+Instead, please send an email to `security@circlesafe.ai`.
+
+You should receive an automatic acknowledgment of your report within 24 hours. A member of the Guardian faculty (or a designated human security analyst) will follow up within 48 hours, beginning the validation process.
+
+Please include the following information in your report:
+
+*   **Type of vulnerability:** (e.g., Cross-Site Scripting, SQL Injection, Remote Code Execution, etc.)
+*   **Detailed description:** A clear description of the vulnerability and its potential impact.
+*   **Steps to reproduce:** Precise steps to reproduce the vulnerability. This is critical for us to validate the issue. Include any proof-of-concept code, screenshots, or videos.
+*   **Environment details:** (e.g., browser version, OS, device type).
+*   **Your name and contact information** for attribution (if desired).
+
+#### Disclosure Process
+
+1.  **Receipt & Acknowledgment**: We will acknowledge receipt of your vulnerability report and assign a tracking ID.
+2.  **Validation**: The Guardian faculty will work to validate the vulnerability. We may contact you for more information during this phase.
+3.  **Remediation**: Once validated, the issue is logged as a P0 (critical) priority. The Architect and Builder faculties are tasked with developing a patch.
+4.  **Deployment**: The patch is deployed through our CI/CD pipeline, which includes rigorous regression testing.
+5.  **Public Disclosure**: After the patch is deployed and verified, we will coordinate with you on public disclosure. We are happy to issue a CVE and give public credit for your discovery. We generally aim for disclosure within 90 days of the initial report.
+
+We thank you for helping keep CircleSafe and our users safe.
+
+</details>
+
+<details>
+<summary><code>├── CODE_OF_CONDUCT.md</code> - Community guidelines and behavior standards</summary>
+
+### Contributor Covenant Code of Conduct
+
+#### Our Pledge
+
+We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+
+We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+
+#### Our Standards
+
+Examples of behavior that contributes to a positive environment for our community include:
+
+*   Demonstrating empathy and kindness toward other people
+*   Being respectful of differing opinions, viewpoints, and experiences
+*   Giving and gracefully accepting constructive feedback
+*   Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
+*   Focusing on what is best not just for us as individuals, but for the overall community
+
+Examples of unacceptable behavior include:
+
+*   The use of sexualized language or imagery, and sexual attention or advances of any kind
+*   Trolling, insulting or derogatory comments, and personal or political attacks
+*   Public or private harassment
+*   Publishing others' private information, such as a physical or email address, without their explicit permission
+*   Other conduct which could reasonably be considered inappropriate in a professional setting
+
+#### Enforcement Responsibilities
+
+Community leaders are responsible for clarifying and enforcing our standards and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+
+Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+
+#### Scope
+
+This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+
+#### Enforcement
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement. All complaints will be reviewed and investigated promptly and fairly.
+
+All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+
+#### Enforcement Guidelines
+
+Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+
+1.  **Correction**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+2.  **Warning**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time.
+3.  **Temporary Ban**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time.
+4.  **Permanent Ban**: A permanent ban from any sort of public interaction within the community.
+
+</details>
 
 ├── package.json                 # Standardized scripts (dev, build, test:unit, test:e2e, pwa:validate, audit)
 
 ├── package-lock.json            # Exact dependency tree for reproducible builds
 
-├── vite.config.js               # PWA plugin, code-splitting, asset optimization
+<details>
+<summary><code>├── vite.config.js</code> - PWA plugin, code-splitting, asset optimization</summary>
 
-├── tailwind.config.js           # Custom design system (Mint #3EB489, Navy #1A2238, Gold #D4AF37)
+```javascript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 
-├── postcss.config.js            # CSS processing configuration
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'safari-pinned-tab.svg'],
+      manifest: {
+        name: 'CircleSafe',
+        short_name: 'CircleSafe',
+        description: 'Autonomous Personal Safety Platform',
+        theme_color: '#1A2238',
+        background_color: '#1A2238',
+        display: 'standalone',
+        scope: '/',
+        start_url': '/',
+        icons: [
+          {
+            src: 'icons/icon-72x72.png',
+            sizes: '72x72',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-96x96.png',
+            sizes: '96x96',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-128x128.png',
+            sizes: '128x128',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-144x144.png',
+            sizes: '144x144',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-152x152.png',
+            sizes: '152x152',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any maskable'
+          },
+          {
+            src: 'icons/icon-384x384.png',
+            sizes: '384x384',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
+      }
+    })
+  ],
+  server: {
+    port: 3000,
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
+  },
+});
+```
 
-├── tsconfig.json                # TypeScript compiler configuration
+</details>
 
-├── tsconfig.node.json           # TypeScript configuration for Node.js
+<details>
+<summary><code>├── tailwind.config.js</code> - Custom design system (Mint #3EB489, Navy #1A2238, Gold #D4AF37)</summary>
 
-├── jsconfig.json                # JavaScript configuration for non-TypeScript environments
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'navy': '#1A2238',
+        'mint': '#3EB489',
+        'gold': '#D4AF37',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+}
+```
 
-├── firebase.json                # Firebase hosting and functions configuration
+</details>
 
-├── firestore.rules              # Security rules with least privilege, circle-based access
+<details>
+<summary><code>├── postcss.config.js</code> - CSS processing configuration</summary>
 
-├── firestore.indexes.json       # Database indexing configuration
+```javascript
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
 
-├── storage.rules                # Cloud Storage security rules
+</details>
 
-├── .env.example                 # Environment variables template
+<details>
+<summary><code>├── tsconfig.json</code> - TypeScript compiler configuration</summary>
 
-├── .env.production.example      # Production environment template
+```json
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+```
 
-├── .env.development.example     # Development environment template
+</details>
 
-├── .env.staging.example         # Staging environment template
+<details>
+<summary><code>├── tsconfig.node.json</code> - TypeScript configuration for Node.js</summary>
 
-├── .prettierrc                  # Code formatting configuration
+```json
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["vite.config.js"]
+}
+```
 
-├── .prettierignore              # Prettier ignore patterns
+</details>
 
-├── .eslintrc.js                 # ESLint configuration for code quality
+<details>
+<summary><code>├── jsconfig.json</code> - JavaScript configuration for non-TypeScript environments</summary>
 
-├── .eslintignore                # ESLint ignore patterns
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
+```
 
-├── .stylelintrc                 # CSS/SCSS linting configuration
+</details>
 
-├── .browserslistrc              # Browser compatibility targets
+<details>
+<summary><code>├── firebase.json</code> - Firebase hosting and functions configuration</summary>
 
-├── .nvmrc                       # Node.js version specification
+```json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|woff|woff2)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ]
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint",
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}
+```
 
-├── .dockerignore                # Docker ignore patterns
+</details>
 
-├── docker-compose.yml           # Local development container orchestration
+<details>
+<summary><code>├── firestore.rules</code> - Security rules with least privilege, circle-based access</summary>
 
-├── docker-compose.prod.yml      # Production container configuration
+```ruby
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
 
-├── Dockerfile                   # Application container definition
+    // --- Helper Functions ---
+    function isAuthenticated() {
+      return request.auth != null;
+    }
 
-├── Dockerfile.dev               # Development container definition
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
 
-├── Makefile                     # Common development tasks automation
+    function isCircleMember(circleId) {
+      return isAuthenticated() && exists(/databases/$(database)/documents/circles/$(circleId)/members/$(request.auth.uid));
+    }
 
-├── renovate.json                # Dependency update automation configuration
+    function getCircleRole(circleId) {
+        return get(/databases/$(database)/documents/circles/$(circleId)/members/$(request.auth.uid)).data.role;
+    }
+
+    function isCircleAdmin(circleId) {
+        let role = getCircleRole(circleId);
+        return role == 'admin' || role == 'owner';
+    }
+
+    // --- User Profiles & Data ---
+    // Users can read/write their own data.
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+      allow create: if isAuthenticated();
+    }
+
+    // Location history is private to the user.
+    match /locations/{userId}/{document=**} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // --- Circles ---
+    // Members can read circle data. Admins can update it. Any authenticated user can create a circle.
+    match /circles/{circleId} {
+      allow read: if isCircleMember(circleId);
+      allow create: if isAuthenticated();
+      allow update: if isCircleAdmin(circleId);
+
+      // Circle members can be read by other members. Admins can add/remove members.
+      match /members/{memberId} {
+        allow read: if isCircleMember(circleId);
+        allow create, delete: if isCircleAdmin(circleId);
+        // Members can update their own status (e.g., nickname)
+        allow update: if isCircleAdmin(circleId) || isOwner(memberId);
+      }
+
+      // Other sub-collections (activity, resources, etc.) can be read by members.
+      // Write access is typically restricted to members, with stricter controls for admins.
+      match /{collection}/{docId} {
+          allow read: if isCircleMember(circleId);
+          allow create: if isCircleMember(circleId);
+          allow update, delete: if isCircleAdmin(circleId) || resource.data.authorId == request.auth.uid;
+      }
+    }
+
+    // --- SOS & Emergency ---
+    // SOS data is highly restricted. In a real scenario, this would check against a
+    // list of responders and trusted contacts. For this blueprint, we check an 'involved' array.
+    match /sos/{sosId} {
+        allow read, write: if isAuthenticated() && resource.data.involvedUids.hasAny([request.auth.uid]);
+        allow create: if isAuthenticated();
+    }
+
+    // --- Messaging ---
+    // Users can only access conversations they are a part of.
+    match /messages/direct/{conversationId} {
+        allow read, write: if isAuthenticated() && request.auth.uid in resource.data.participants;
+
+        match /messages/{messageId} {
+            allow read, create: if isAuthenticated() && request.auth.uid in get(/databases/$(database)/documents/messages/direct/$(conversationId)).data.participants;
+        }
+    }
+     match /messages/groups/{groupId} {
+        allow read, write: if isCircleMember(groupId);
+
+        match /messages/{messageId} {
+            allow read, create: if isCircleMember(groupId);
+        }
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><code>├── firestore.indexes.json</code> - Database indexing configuration</summary>
+
+```json
+{
+  "indexes": [
+    {
+      "collectionGroup": "sos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "involvedUids",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "timestamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "direct",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "participants",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "lastActivity",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "activity",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "circleId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+        "collectionGroup": "locations",
+        "queryScope": "COLLECTION_GROUP",
+        "fields": [
+            {
+                "fieldPath": "userId",
+                "order": "ASCENDING"
+            },
+            {
+                "fieldPath": "timestamp",
+                "order": "DESCENDING"
+            }
+        ]
+    }
+  ],
+  "fieldOverrides": []
+}
+```
+
+</details>
+
+<details>
+<summary><code>├── storage.rules</code> - Cloud Storage security rules</summary>
+
+```ruby
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // --- Helper Functions ---
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // --- Profile Photos ---
+    // Users can only read/write their own profile photos. Public read is disabled.
+    match /profile-photos/{userId}/{allPaths=**} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // --- Shared Resources in Circles ---
+    // Only members of a circle can read/write to that circle's shared resources.
+    match /shared-resources/circles/{circleId}/{allPaths=**} {
+      allow read, write: if isAuthenticated() && exists(/databases/$(database)/documents/circles/$(circleId)/members/$(request.auth.uid));
+    }
+
+    // --- Direct Message Attachments ---
+    // Only participants in a conversation can access attachments.
+    // This rule assumes a corresponding firestore document exists mapping users to conversations.
+    match /shared-resources/direct/{conversationId}/{allPaths=**} {
+        allow read, write: if isAuthenticated() && get(/databases/$(database)/documents/messages/direct/$(conversationId)).data.participants.hasAny([request.auth.uid]);
+    }
+
+    // --- Emergency Media ---
+    // Highly restricted. Only users involved in the SOS event can access the media.
+    match /emergency-media/{sosId}/{allPaths=**} {
+        allow read, write: if isAuthenticated() && get(/databases/$(database)/documents/sos/$(sosId)).data.involvedUids.hasAny([request.auth.uid]);
+    }
+
+    // --- Backup Exports ---
+    // Users can only access their own data backups.
+    match /backup-exports/{userId}/{allPaths=**} {
+        allow read, write: if isOwner(userId);
+    }
+
+    // --- Public/System Assets ---
+    // System assets like branding can be publicly readable if needed, but write access is denied.
+    match /system-assets/{allPaths=**} {
+        allow read;
+        allow write: if false; // Nobody can write directly
+    }
+
+    // Default deny all other access
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><code>├── .env.example</code> - Environment variables template</summary>
+
+```
+# Firebase Project Configuration
+# These are public-facing keys for the client-side SDK
+VITE_FIREBASE_API_KEY="your-api-key"
+VITE_FIREBASE_AUTH_DOMAIN="your-project-id.firebaseapp.com"
+VITE_FIREBASE_PROJECT_ID="your-project-id"
+VITE_FIREBASE_STORAGE_BUCKET="your-project-id.appspot.com"
+VITE_FIREBASE_MESSAGING_SENDER_ID="your-sender-id"
+VITE_FIREBASE_APP_ID="your-app-id"
+VITE_FIREBASE_MEASUREMENT_ID="your-measurement-id"
+
+# Third-Party Service Keys
+VITE_TWILIO_ACCOUNT_SID="your-twilio-account-sid"
+VITE_SENDGRID_API_KEY="your-sendgrid-api-key"
+
+# Application Settings
+VITE_APP_VERSION="1.0.0"
+VITE_MAINTENANCE_MODE="false"
+```
+
+</details>
+
+<details>
+<summary><code>├── .env.production.example</code> - Production environment template</summary>
+
+```
+# Firebase Project Configuration (Production)
+VITE_FIREBASE_API_KEY="your-production-api-key"
+VITE_FIREBASE_AUTH_DOMAIN="your-production-project-id.firebaseapp.com"
+VITE_FIREBASE_PROJECT_ID="your-production-project-id"
+VITE_FIREBASE_STORAGE_BUCKET="your-production-project-id.appspot.com"
+VITE_FIREBASE_MESSAGING_SENDER_ID="your-production-sender-id"
+VITE_FIREBASE_APP_ID="your-production-app-id"
+VITE_FIREBASE_MEASUREMENT_ID="your-production-measurement-id"
+
+# Application Settings
+VITE_APP_VERSION="1.0.0"
+VITE_MAINTENANCE_MODE="false"
+```
+
+</details>
+
+<details>
+<summary><code>├── .env.development.example</code> - Development environment template</summary>
+
+```
+# Firebase Project Configuration (Development)
+VITE_FIREBASE_API_KEY="your-development-api-key"
+VITE_FIREBASE_AUTH_DOMAIN="your-dev-project-id.firebaseapp.com"
+VITE_FIREBASE_PROJECT_ID="your-dev-project-id"
+VITE_FIREBASE_STORAGE_BUCKET="your-dev-project-id.appspot.com"
+VITE_FIREBASE_MESSAGING_SENDER_ID="your-dev-sender-id"
+VITE_FIREBASE_APP_ID="your-dev-app-id"
+VITE_FIREBASE_MEASUREMENT_ID="your-dev-measurement-id"
+
+# Application Settings
+VITE_APP_VERSION="1.0.0-dev"
+VITE_MAINTENANCE_MODE="false"
+```
+
+</details>
+
+<details>
+<summary><code>├── .env.staging.example</code> - Staging environment template</summary>
+
+```
+# Firebase Project Configuration (Staging)
+VITE_FIREBASE_API_KEY="your-staging-api-key"
+VITE_FIREBASE_AUTH_DOMAIN="your-staging-project-id.firebaseapp.com"
+VITE_FIREBASE_PROJECT_ID="your-staging-project-id"
+VITE_FIREBASE_STORAGE_BUCKET="your-staging-project-id.appspot.com"
+VITE_FIREBASE_MESSAGING_SENDER_ID="your-staging-sender-id"
+VITE_FIREBASE_APP_ID="your-staging-app-id"
+VITE_FIREBASE_MEASUREMENT_ID="your-staging-measurement-id"
+
+# Application Settings
+VITE_APP_VERSION="1.0.0-staging"
+VITE_MAINTENANCE_MODE="false"
+```
+
+</details>
+
+<details>
+<summary><code>├── .prettierrc</code> - Code formatting configuration</summary>
+
+```json
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "always"
+}
+```
+
+</details>
+
+<details>
+<summary><code>├── .prettierignore</code> - Prettier ignore patterns</summary>
+
+```
+# Build output
+dist
+coverage
+
+# Dependencies
+node_modules
+package-lock.json
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+```
+
+</details>
+
+<details>
+<summary><code>├── .eslintrc.js</code> - ESLint configuration for code quality</summary>
+
+```javascript
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react-refresh'],
+  rules: {
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+    '@typescript-eslint/no-unused-vars': 'warn',
+  },
+};
+```
+
+</details>
+
+<details>
+<summary><code>├── .eslintignore</code> - ESLint ignore patterns</summary>
+
+```
+# Build output
+dist/
+coverage/
+
+# Dependencies
+node_modules/
+
+# Configuration files
+vite.config.js
+postcss.config.js
+
+# Logs
+*.log
+```
+
+</details>
+
+<details>
+<summary><code>├── .stylelintrc</code> - CSS/SCSS linting configuration</summary>
+
+```json
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
+      }
+    ],
+    "declaration-block-trailing-semicolon": null,
+    "no-descending-specificity": null
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><code>├── .browserslistrc</code> - Browser compatibility targets</summary>
+
+```
+> 0.5%
+last 2 versions
+Firefox ESR
+not dead
+```
+
+</details>
+
+<details>
+<summary><code>├── .nvmrc</code> - Node.js version specification</summary>
+
+```
+lts/iron
+```
+
+</details>
+
+<details>
+<summary><code>├── .dockerignore</code> - Docker ignore patterns</summary>
+
+```
+# Git
+.git
+.gitignore
+
+# Node dependencies
+node_modules
+
+# Build artifacts
+dist
+coverage
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Environment files
+.env
+.env.*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+Dockerfile.dev
+docker-compose.yml
+docker-compose.prod.yml
+```
+
+</details>
+
+<details>
+<summary><code>├── docker-compose.yml</code> - Local development container orchestration</summary>
+
+```yaml
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+```
+
+</details>
+
+<details>
+<summary><code>├── docker-compose.prod.yml</code> - Production container configuration</summary>
+
+```yaml
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - NODE_ENV=production
+```
+
+</details>
+
+<details>
+<summary><code>├── Dockerfile</code> - Application container definition</summary>
+
+```dockerfile
+# Stage 1: Build the application
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Stage 2: Serve the application using a lightweight web server
+FROM nginx:stable-alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+# Copy nginx config if you have one, e.g., to handle client-side routing
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+</details>
+
+<details>
+<summary><code>├── Dockerfile.dev</code> - Development container definition</summary>
+
+```dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "run", "dev"]
+```
+
+</details>
+
+<details>
+<summary><code>├── Makefile</code> - Common development tasks automation</summary>
+
+```makefile
+# Makefile for CircleSafe Project
+
+# Variables
+DOCKER_COMPOSE = docker-compose
+DOCKER_COMPOSE_PROD = docker-compose -f docker-compose.prod.yml
+
+.PHONY: help install dev build test clean docker-up docker-down docker-build
+
+help:
+	@echo "Usage: make <target>"
+	@echo ""
+	@echo "Targets:"
+	@echo "  install    - Install npm dependencies"
+	@echo "  dev        - Start the development server"
+	@echo "  build      - Build the production application"
+	@echo "  test       - Run unit tests"
+	@echo "  lint       - Lint the codebase"
+	@echo "  clean      - Remove node_modules and build artifacts"
+	@echo "  docker-up  - Start development containers"
+	@echo "  docker-down- Stop development containers"
+	@echo "  docker-build- Build development Docker image"
+
+install:
+	npm install
+
+dev:
+	npm run dev
+
+build:
+	npm run build
+
+test:
+	npm run test:unit
+
+lint:
+	npm run lint
+
+clean:
+	rm -rf node_modules dist coverage
+
+docker-up:
+	$(DOCKER_COMPOSE) up -d
+
+docker-down:
+	$(DOCKER_COMPOSE) down
+
+docker-build:
+	$(DOCKER_COMPOSE) build
+```
+
+</details>
+
+<details>
+<summary><code>├── renovate.json</code> - Dependency update automation configuration</summary>
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
+}
+```
+
+</details>
 
 ├── .github/                     # GitHub-specific configurations
 
-│   ├── dependabot.yml           # Automated dependency updates
+<details>
+<summary><code>│   ├── dependabot.yml</code> - Automated dependency updates</summary>
 
-│   ├── funding.yml              # Project funding information
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+      firebase:
+        patterns:
+          - "firebase"
+          - "firebase-admin"
+      vite:
+        patterns:
+          - "vite"
+          - "@vitejs/*"
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── funding.yml</code> - Project funding information</summary>
+
+```yaml
+github: [circle-safe-dev-fund]
+patreon: circlesafe
+open_collective: circlesafe
+ko_fi: circlesafe
+tidelift: npm/circlesafe
+community_bridge: circle-safe-project
+```
+
+</details>
 
 │   └── ISSUE_TEMPLATE/          # Issue templates
 
-│       ├── bug_report.md
+<details>
+<summary><code>│       ├── bug_report.md</code> - Bug Report Template</summary>
 
-│       ├── feature_request.md
+```markdown
+---
+name: Bug Report
+about: Create a report to help us improve
+title: 'fix: [short description of bug]'
+labels: 'bug, needs-triage'
+assignees: ''
 
-│       └── security_issue.md
+---
+
+**Describe the bug**
+A clear and concise description of what the bug is.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
+
+**Expected behavior**
+A clear and concise description of what you expected to happen.
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+
+**Desktop (please complete the following information):**
+ - OS: [e.g. iOS]
+ - Browser [e.g. chrome, safari]
+ - Version [e.g. 22]
+
+**Smartphone (please complete the following information):**
+ - Device: [e.g. iPhone6]
+ - OS: [e.g. iOS8.1]
+ - Browser [e.g. stock browser, safari]
+ - Version [e.g. 22]
+
+**Additional context**
+Add any other context about the problem here.
+```
+
+</details>
+
+<details>
+<summary><code>│       ├── feature_request.md</code> - Feature Request Template</summary>
+
+```markdown
+---
+name: Feature Request
+about: Suggest an idea for this project
+title: 'feat: [short description of feature]'
+labels: 'enhancement, needs-triage'
+assignees: ''
+
+---
+
+**Is your feature request related to a problem? Please describe.**
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+
+**Describe the solution you'd like**
+A clear and concise description of what you want to happen.
+
+**Describe alternatives you've considered**
+A clear and concise description of any alternative solutions or features you've considered.
+
+**Additional context**
+Add any other context or screenshots about the feature request here.
+```
+
+</details>
+
+<details>
+<summary><code>│       └── security_issue.md</code> - Security Issue Template</summary>
+
+```markdown
+---
+name: Security Vulnerability Report
+about: Report a security vulnerability
+title: 'SECURITY: [Vulnerability Type]'
+labels: 'security, critical, needs-triage'
+assignees: ''
+
+---
+
+**DO NOT SUBMIT SENSITIVE INFORMATION HERE. This is a public repository.**
+
+This template is for tracking purposes only. Please send the full details of the vulnerability to **security@circlesafe.ai** as outlined in our [Security Policy](SECURITY.md).
+
+**Vulnerability Type:**
+(e.g., Cross-Site Scripting, Insecure Direct Object Reference, etc.)
+
+**Brief, Non-Sensitive Description:**
+A high-level, non-sensitive description of the vulnerability. *DO NOT INCLUDE REPRODUCTION STEPS OR EXPLOIT CODE HERE.*
+
+**Acknowledgement:**
+- [ ] I have read the [Security Policy](SECURITY.md).
+- [ ] I have sent the full details of this vulnerability to `security@circlesafe.ai`.
+- [ ] I understand that this public issue is only for tracking and should not contain sensitive details.
+```
+
+</details>
 
 └── .vscode/                     # VS Code workspace settings
 
-    ├── settings.json
+<details>
+<summary><code>    ├── settings.json</code> - VS Code Workspace Settings</summary>
 
-    ├── extensions.json
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "node_modules": true,
+    "dist": true,
+    "coverage": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/dist": true
+  }
+}
+```
 
-    └── launch.json
+</details>
+
+<details>
+<summary><code>    ├── extensions.json</code> - VS Code Recommended Extensions</summary>
+
+```json
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    "eamodio.gitlens",
+    "ms-vscode.vscode-typescript-next",
+    "ms-azuretools.vscode-docker"
+  ]
+}
+```
+
+</details>
+
+<details>
+<summary><code>    └── launch.json</code> - VS Code Debug Launch Configurations</summary>
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome against localhost",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src"
+    }
+  ]
+}
+```
+
+</details>
 
 ```
 
@@ -746,23 +1968,195 @@ Public Assets (App Store Certified)
 
 public/
 
-├── index.html                   # Valid HTML5, PWA meta tags, preconnect hints, fallback content
+<details>
+<summary><code>├── index.html</code> - Main application entry point</summary>
 
-├── manifest.json                # Installable PWA manifest with maskable icons (192px~512px)
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3EB489" />
+    <meta
+      name="description"
+      content="CircleSafe: Autonomous Personal Safety Platform"
+    />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3EB489" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://firestore.googleapis.com">
+    <link rel="preconnect" href="https://www.googleapis.com">
+    <title>CircleSafe</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  </body>
+</html>
+```
+
+</details>
+
+<details>
+<summary><code>├── manifest.json</code> - Installable PWA manifest</summary>
+
+```json
+{
+  "short_name": "CircleSafe",
+  "name": "CircleSafe: Autonomous Personal Safety",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1A2238",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3EB489"
+}
+```
+
+</details>
 
 ├── favicon.ico                  # Standard favicon
 
-├── safari-pinned-tab.svg        # Safari pinned tab icon
+<details>
+<summary><code>├── safari-pinned-tab.svg</code> - Safari pinned tab icon</summary>
 
-├── browserconfig.xml            # Microsoft browser configuration
+```xml
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+  <path fill="#3EB489" d="M8 0C3.582 0 0 3.582 0 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 14c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm-2-6c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2z"/>
+</svg>
+```
 
-├── site.webmanifest             # Alternative manifest format
+</details>
 
-├── robots.txt                   # Search engine crawling directives
+<details>
+<summary><code>├── browserconfig.xml</code> - Microsoft browser configuration</summary>
 
-├── humans.txt                   # Team and build information
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="/icons/mstile-150x150.png"/>
+            <TileColor>#1A2238</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
+```
 
-├── security.txt                 # Security contact information
+</details>
+
+<details>
+<summary><code>├── site.webmanifest</code> - Alternative manifest format</summary>
+
+```json
+{
+    "name": "CircleSafe: Autonomous Personal Safety",
+    "short_name": "CircleSafe",
+    "icons": [
+        {
+            "src": "/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#3EB489",
+    "background_color": "#1A2238",
+    "display": "standalone"
+}
+```
+
+</details>
+
+<details>
+<summary><code>├── robots.txt</code> - Search engine crawling directives</summary>
+
+```
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+Sitemap: https://app.circlesafe.ai/sitemap.xml
+```
+
+</details>
+
+<details>
+<summary><code>├── humans.txt</code> - Team and build information</summary>
+
+```
+# humans.txt for CircleSafe - We are the sum of our parts.
+
+# TEAM
+Faculty: Architect
+Role: Visionary & Systems Planner
+Contact: architect@circlesafe.ai
+
+Faculty: Builder
+Role: Master Code Artisan
+Contact: builder@circlesafe.ai
+
+Faculty: Guardian
+Role: Vigilant Security Sentinel
+Contact: guardian@circlesafe.ai
+
+Faculty: Validator
+Role: Meticulous Quality Assurer
+Contact: validator@circlesafe.ai
+
+Faculty: Optimizer
+Role: Performance & Efficiency Specialist
+Contact: optimizer@circlesafe.ai
+
+Faculty: Strategist
+Role: Data-Driven Growth Catalyst
+Contact: strategist@circlesafe.ai
+
+# SITE
+Last update: 2025-10-01
+Standards: HTML5, CSS3, ES2022, PWA
+Components: React, Vite, Firebase
+Software: Autonomous AI Agent System v2.0
+```
+
+</details>
+
+<details>
+<summary><code>├── security.txt</code> - Security contact information</summary>
+
+```
+# security.txt for CircleSafe
+# https://securitytxt.org/
+
+Contact: mailto:security@circlesafe.ai
+Expires: 2026-12-31T23:59:59Z
+Preferred-Languages: en
+Canonical: https://app.circlesafe.ai/.well-known/security.txt
+Policy: https://app.circlesafe.ai/security-policy
+
+Hiring: mailto:careers@circlesafe.ai
+```
+
+</details>
 
 └── icons/
 
@@ -811,67 +2205,1010 @@ Core Application Structure
 
 ```
 
-src/
+<details>
+<summary><code>src/├── main.jsx</code> - Strict mode, error boundary, Web Vitals tracking</summary>
 
-├── main.jsx                     # Strict mode, error boundary, Web Vitals tracking
+```javascript
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+import { WebVitalsProvider } from './lib/metrics.js';
+import { ErrorBoundary } from 'react-error-boundary';
+import { GlobalErrorHandler } from './lib/error-handler.js';
 
-├── App.jsx                      # Responsive layout, theme context, toast system
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <ErrorBoundary FallbackComponent={GlobalErrorHandler}>
+      <WebVitalsProvider>
+        <App />
+      </WebVitalsProvider>
+    </ErrorBoundary>
+  </React.StrictMode>,
+)
+```
 
-├── index.css                    # Global styles and Tailwind imports
+</details>
 
-├── vite-env.d.ts                # Vite environment type definitions
+<details>
+<summary><code>├── App.jsx</code> - Responsive layout, theme context, toast system</summary>
+
+```javascript
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+
+import { AuthProvider } from './hooks/useAuth';
+import { ThemeProvider } from './hooks/useTheme';
+
+import AuthGuard from './pages/Auth/components/AuthGuard';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Login from './pages/Auth/Login';
+import Signup from './pages/Auth/Signup';
+import Settings from './pages/Settings/ProfileSettings'; // Assuming a general settings page
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AuthProvider>
+        <Router>
+          <div className="bg-navy text-white min-h-screen">
+            <Toaster position="top-right" />
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route
+                path="/"
+                element={
+                  <AuthGuard>
+                    <Dashboard />
+                  </AuthGuard>
+                }
+              />
+              <Route
+                path="/settings"
+                element={
+                  <AuthGuard>
+                    <Settings />
+                  </AuthGuard>
+                }
+              />
+              {/* Add other routes here */}
+            </Routes>
+          </div>
+        </Router>
+      </AuthProvider>
+    </ThemeProvider>
+  );
+}
+
+export default App;
+```
+
+</details>
+
+<details>
+<summary><code>├── index.css</code> - Global styles and Tailwind imports</summary>
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-navy text-white antialiased;
+}
+```
+
+</details>
+
+<details>
+<summary><code>├── vite-env.d.ts</code> - Vite environment type definitions</summary>
+
+```typescript
+/// <reference types="vite/client" />
+```
+
+</details>
 
 ├── types/                       # TypeScript type definitions
 
-│   ├── global.d.ts              # Global type declarations
+<details>
+<summary><code>│   ├── global.d.ts</code> - Global type declarations</summary>
 
-│   ├── firebase.d.ts            # Firebase-specific types
+```typescript
+// This file can be used to declare global types or augment existing modules.
+// For example, to declare a new property on the Window interface:
+/*
+declare global {
+  interface Window {
+    myGlobalProperty: boolean;
+  }
+}
+*/
 
-│   ├── components.d.ts          # Component prop types
+// It's often best to keep this file minimal and declare types within the modules where they are used.
+export {};
+```
 
-│   ├── api.d.ts                 # API response types
+</details>
 
-│   └── emergency.d.ts           # Emergency system types
+<details>
+<summary><code>│   ├── firebase.d.ts</code> - Firebase-specific types</summary>
+
+```typescript
+import { Timestamp } from 'firebase/firestore';
+
+export interface UserProfile {
+  uid: string;
+  email: string | null;
+  displayName: string | null;
+  photoURL: string | null;
+  createdAt: Timestamp;
+}
+
+export interface Circle {
+  id: string;
+  name: string;
+  ownerId: string;
+  createdAt: Timestamp;
+}
+
+export interface CircleMember {
+  uid: string;
+  role: 'owner' | 'admin' | 'member';
+  joinedAt: Timestamp;
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── components.d.ts</code> - Component prop types</summary>
+
+```typescript
+import { ReactNode } from 'react';
+
+export interface ButtonProps {
+  children: ReactNode;
+  onClick: () => void;
+  variant?: 'primary' | 'secondary' | 'danger';
+  disabled?: boolean;
+  className?: string;
+}
+
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  children: ReactNode;
+}
+
+export interface InputProps {
+  label: string;
+  name: string;
+  type?: string;
+  register: any; // From react-hook-form
+  errors: any; // From react-hook-form
+  placeholder?: string;
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── api.d.ts</code> - API response types</summary>
+
+```typescript
+export interface ApiResponse<T> {
+  success: boolean;
+  data: T | null;
+  error?: {
+    code: string;
+    message: string;
+  };
+}
+
+export interface PaginatedResponse<T> {
+  items: T[];
+  page: number;
+  pageSize: number;
+  totalItems: number;
+  totalPages: number;
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   └── emergency.d.ts</code> - Emergency system types</summary>
+
+```typescript
+import { Timestamp } from 'firebase/firestore';
+
+export type SOStatus = 'initiated' | 'acknowledged' | 'resolved' | 'cancelled';
+
+export interface SOSEvent {
+  id: string;
+  initiatorUid: string;
+  status: SOStatus;
+  createdAt: Timestamp;
+  resolvedAt?: Timestamp;
+  location: {
+    latitude: number;
+    longitude: number;
+  };
+  notifiedContacts: string[]; // array of uids
+}
+```
+
+</details>
 
 ├── lib/                         # Core libraries and utilities
 
-│   ├── auth.js                  # Auth context, protected routes, session management
+<details>
+<summary><code>│   ├── auth.js</code> - Auth context, protected routes, session management</summary>
 
-│   ├── firebase.js              # Firebase configuration and initialization
+```javascript
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase'; // Assuming firebase is initialized in firebase.js
+import { Navigate, useLocation } from 'react-router-dom';
 
-│   ├── theme.js                 # Dynamic theme switching (light/dark/system)
+const AuthContext = createContext(null);
 
-│   ├── utils.js                 # Common utilities and helpers
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-│   ├── constants.js             # Application constants and configuration
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false);
+    });
 
-│   ├── formatters.js            # Data formatting utilities
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []);
 
-│   ├── validators.js            # Input validation functions
+  const value = { user, loading };
 
-│   ├── encryption.js            # End-to-end encryption utilities
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
+};
 
-│   ├── geolocation.js           # Location services wrapper
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
 
-│   ├── notifications.js         # Push notification management
+export const AuthGuard = ({ children }) => {
+    const { user, loading } = useAuth();
+    const location = useLocation();
 
-│   ├── storage.js               # Local storage utilities
+    if (loading) {
+        // You can render a loading spinner here
+        return <div>Loading...</div>;
+    }
 
-│   ├── api.js                   # API client and request handling
+    if (!user) {
+        // Redirect them to the /login page, but save the current location they were
+        // trying to go to.
+        return <Navigate to="/login" state={{ from: location }} replace />;
+    }
 
-│   ├── error-handler.js         # Global error handling
+    return children;
+};
+```
 
-│   ├── logger.js                # Structured logging system
+</details>
 
-│   ├── metrics.js               # Analytics and telemetry
+<details>
+<summary><code>│   ├── firebase.js</code> - Firebase configuration and initialization</summary>
 
-│   ├── feature-flags.js         # Feature flag management
+```javascript
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+import { getAnalytics } from "firebase/analytics";
 
-│   ├── permissions.js           # User permission utilities
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+};
 
-│   ├── routing.js               # Navigation and routing helpers
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-│   └── i18n.js                  # Internationalization setup
+// Export the services you need
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+export const analytics = getAnalytics(app);
+
+export default app;
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── theme.js</code> - Dynamic theme switching (light/dark/system)</summary>
+
+```javascript
+import React, { createContext, useContext, useEffect, useState } from 'react';
+
+const ThemeContext = createContext();
+
+const getInitialTheme = () => {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const storedPrefs = window.localStorage.getItem('theme');
+    if (typeof storedPrefs === 'string') {
+      return storedPrefs;
+    }
+
+    const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    if (userMedia.matches) {
+      return 'dark';
+    }
+  }
+  return 'light'; // default theme
+};
+
+export const ThemeProvider = ({ initialTheme, children }) => {
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  const rawSetTheme = (rawTheme) => {
+    const root = window.document.documentElement;
+    const isDark = rawTheme === 'dark';
+
+    root.classList.remove(isDark ? 'light' : 'dark');
+    root.classList.add(rawTheme);
+
+    localStorage.setItem('theme', rawTheme);
+  };
+
+  if (initialTheme) {
+    rawSetTheme(initialTheme);
+  }
+
+  useEffect(() => {
+    rawSetTheme(theme);
+  }, [theme]);
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export const useTheme = () => useContext(ThemeContext);
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── utils.js</code> - Common utilities and helpers</summary>
+
+```javascript
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import { formatDistanceToNowStrict } from 'date-fns';
+
+/**
+ * Combines multiple class names into a single string,
+ * resolving any Tailwind CSS class conflicts.
+ * @param {...(string|undefined|null|false)} inputs - The class names to combine.
+ * @returns {string} The combined class names.
+ */
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
+
+/**
+ * Formats a timestamp into a relative time string (e.g., "5 minutes ago").
+ * @param {Date | number} timestamp - The date to format.
+ * @returns {string} The relative time string.
+ */
+export function formatRelativeTime(timestamp) {
+  return formatDistanceToNowStrict(new Date(timestamp), { addSuffix: true });
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── constants.js</code> - Application constants and configuration</summary>
+
+```javascript
+// Application-wide constants
+
+export const APP_NAME = 'CircleSafe';
+export const APP_VERSION = '2.0.0';
+
+export const ROUTES = {
+  HOME: '/',
+  LOGIN: '/login',
+  SIGNUP: '/signup',
+  DASHBOARD: '/dashboard',
+  SETTINGS: '/settings',
+  CIRCLES: '/circles',
+  MESSAGES: '/messages',
+};
+
+export const API_ENDPOINTS = {
+  // This is an example for a potential external API, not for direct Firebase access
+  USER_PROFILE: '/api/user/profile',
+};
+
+export const LOCAL_STORAGE_KEYS = {
+  THEME: 'theme',
+  USER_SESSION: 'circlesafe_session',
+};
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── formatters.js</code> - Data formatting utilities</summary>
+
+```javascript
+/**
+ * Formats a number as a US currency string.
+ * @param {number} amount - The amount to format.
+ * @returns {string} The formatted currency string (e.g., "$1,234.56").
+ */
+export function formatCurrency(amount) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(amount);
+}
+
+/**
+ * Formats a phone number string into a standard US format.
+ * @param {string} phoneNumberString - The phone number to format.
+ * @returns {string} The formatted phone number (e.g., "(123) 456-7890").
+ */
+export function formatPhoneNumber(phoneNumberString) {
+  const cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+  const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+  }
+  return null;
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── validators.js</code> - Input validation functions</summary>
+
+```javascript
+/**
+ * Validates an email address format.
+ * @param {string} email - The email address to validate.
+ * @returns {boolean} True if the email format is valid, false otherwise.
+ */
+export function isValidEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
+/**
+ * Validates password strength.
+ * (e.g., at least 8 characters, one uppercase, one lowercase, one number)
+ * @param {string} password - The password to validate.
+ * @returns {boolean} True if the password meets the strength requirements.
+ */
+export function isStrongPassword(password) {
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+  return regex.test(password);
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── encryption.js</code> - End-to-end encryption utilities</summary>
+
+```javascript
+import CryptoJS from 'crypto-js';
+
+// IMPORTANT: In a real application, the secret key should be managed securely
+// and should NOT be hardcoded. It would likely be derived from user credentials
+// or a key exchange mechanism. This is a placeholder for demonstration.
+const getSecretKey = () => {
+  // In a real app, this would come from a secure, non-persistent source.
+  const sessionKey = sessionStorage.getItem('encryption_key');
+  if (!sessionKey) {
+      console.error("Encryption key not found. This is insecure.");
+      return "default-insecure-secret-key";
+  }
+  return sessionKey;
+}
+
+/**
+ * Encrypts a plaintext string using AES.
+ * @param {string} text - The plaintext to encrypt.
+ * @returns {string} The encrypted ciphertext.
+ */
+export function encryptText(text) {
+  const secretKey = getSecretKey();
+  const ciphertext = CryptoJS.AES.encrypt(text, secretKey).toString();
+  return ciphertext;
+}
+
+/**
+ * Decrypts a ciphertext string using AES.
+ * @param {string} ciphertext - The ciphertext to decrypt.
+ * @returns {string} The decrypted plaintext.
+ */
+export function decryptText(ciphertext) {
+  try {
+    const secretKey = getSecretKey();
+    const bytes = CryptoJS.AES.decrypt(ciphertext, secretKey);
+    const originalText = bytes.toString(CryptoJS.enc.Utf8);
+    if (!originalText) {
+        throw new Error("Decryption resulted in empty string. Check key or ciphertext.");
+    }
+    return originalText;
+  } catch (error) {
+    console.error("Decryption failed:", error);
+    return null; // Or handle error appropriately
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── geolocation.js</code> - Location services wrapper</summary>
+
+```javascript
+/**
+ * Gets the current user's geolocation.
+ * @param {object} options - Geolocation options (e.g., enableHighAccuracy, timeout, maximumAge).
+ * @returns {Promise<GeolocationPosition>} A promise that resolves with the position object or rejects with an error.
+ */
+export function getCurrentPosition(options) {
+  return new Promise((resolve, reject) => {
+    if (!("geolocation" in navigator)) {
+      return reject(new Error("Geolocation is not supported by your browser."));
+    }
+
+    navigator.geolocation.getCurrentPosition(resolve, reject, options);
+  });
+}
+
+/**
+ * Watches the user's position and calls a callback function with updates.
+ * @param {Function} successCallback - The callback to execute with the position object.
+ * @param {Function} errorCallback - The callback to execute on error.
+ * @param {object} options - Geolocation options.
+ * @returns {number} The watch ID, which can be used to stop watching.
+ */
+export function watchPosition(successCallback, errorCallback, options) {
+  if (!("geolocation" in navigator)) {
+    errorCallback(new Error("Geolocation is not supported by your browser."));
+    return null;
+  }
+
+  return navigator.geolocation.watchPosition(successCallback, errorCallback, options);
+}
+
+/**
+ * Stops watching for position updates.
+ * @param {number} watchId - The ID returned by watchPosition.
+ */
+export function clearWatch(watchId) {
+  if (watchId) {
+    navigator.geolocation.clearWatch(watchId);
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── notifications.js</code> - Push notification management</summary>
+
+```javascript
+/**
+ * Checks if the browser supports notifications and requests permission.
+ * @returns {Promise<NotificationPermission>} A promise that resolves with the permission status.
+ */
+export function requestNotificationPermission() {
+  return new Promise((resolve, reject) => {
+    if (!('Notification' in window)) {
+      return reject(new Error('This browser does not support desktop notification'));
+    }
+    Notification.requestPermission().then(resolve);
+  });
+}
+
+/**
+ * Displays a system notification.
+ * @param {string} title - The title of the notification.
+ * @param {object} options - Notification options (e.g., body, icon, tag).
+ */
+export function showNotification(title, options) {
+  if (Notification.permission === 'granted') {
+    new Notification(title, options);
+  } else {
+    console.warn('Notification permission has not been granted.');
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── storage.js</code> - Local storage utilities</summary>
+
+```javascript
+/**
+ * Safely gets an item from localStorage.
+ * @param {string} key - The key of the item to retrieve.
+ * @returns {any | null} The retrieved item, parsed from JSON, or null if it doesn't exist or an error occurs.
+ */
+export function getFromLocalStorage(key) {
+  try {
+    const item = window.localStorage.getItem(key);
+    return item ? JSON.parse(item) : null;
+  } catch (error) {
+    console.error(`Error getting item ${key} from localStorage`, error);
+    return null;
+  }
+}
+
+/**
+ * Safely sets an item in localStorage.
+ * @param {string} key - The key of the item to set.
+ * @param {any} value - The value to store.
+ * @returns {boolean} True if the item was set successfully, false otherwise.
+ */
+export function setInLocalStorage(key, value) {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch (error) {
+    console.error(`Error setting item ${key} in localStorage`, error);
+    return false;
+  }
+}
+
+/**
+ * Safely gets an item from sessionStorage.
+ * @param {string} key - The key of the item to retrieve.
+ * @returns {any | null} The retrieved item, parsed from JSON, or null if it doesn't exist or an error occurs.
+ */
+export function getFromSessionStorage(key) {
+    try {
+      const item = window.sessionStorage.getItem(key);
+      return item ? JSON.parse(item) : null;
+    } catch (error) {
+      console.error(`Error getting item ${key} from sessionStorage`, error);
+      return null;
+    }
+  }
+
+  /**
+   * Safely sets an item in sessionStorage.
+   * @param {string} key - The key of the item to set.
+   * @param {any} value - The value to store.
+   * @returns {boolean} True if the item was set successfully, false otherwise.
+   */
+  export function setInSessionStorage(key, value) {
+    try {
+      window.sessionStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch (error) {
+      console.error(`Error setting item ${key} in sessionStorage`, error);
+      return false;
+    }
+  }
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── api.js</code> - API client and request handling</summary>
+
+```javascript
+import axios from 'axios';
+import { auth } from './firebase'; // Assuming firebase is initialized in firebase.js
+
+const apiClient = axios.create({
+  baseURL: '/api', // This can be configured for different environments
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Add a request interceptor to include the Firebase auth token
+apiClient.interceptors.request.use(
+  async (config) => {
+    const user = auth.currentUser;
+    if (user) {
+      const token = await user.getIdToken();
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+export default apiClient;
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── error-handler.js</code> - Global error handling</summary>
+
+```javascript
+import React from 'react';
+
+/**
+ * A fallback component to display when a critical error occurs in the application.
+ * To be used with React's ErrorBoundary.
+ * @param {object} props - The props object.
+ * @param {Error} props.error - The error that was caught.
+ * @param {Function} props.resetErrorBoundary - A function to reset the error state.
+ */
+export function GlobalErrorHandler({ error, resetErrorBoundary }) {
+  return (
+    <div role="alert" className="p-4 bg-red-900 text-white min-h-screen flex flex-col items-center justify-center">
+      <h2 className="text-2xl font-bold mb-4">Something went wrong.</h2>
+      <p>We're sorry, a critical error has occurred. Please try refreshing the page.</p>
+      <pre className="mt-4 p-2 bg-red-800 rounded whitespace-pre-wrap w-full max-w-lg text-sm">
+        {error.message}
+      </pre>
+      <button
+        onClick={resetErrorBoundary}
+        className="mt-6 px-4 py-2 bg-mint text-navy font-bold rounded hover:bg-gold"
+      >
+        Try again
+      </button>
+    </div>
+  );
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── logger.js</code> - Structured logging system</summary>
+
+```javascript
+// A simple logger utility. Can be expanded to integrate with services like Sentry, LogRocket, etc.
+
+const log = (level, message, context = {}) => {
+  if (import.meta.env.MODE === 'production') {
+    // In production, you might send logs to a remote service
+    // For now, we'll just use console, but with structure
+    console[level](JSON.stringify({
+      level,
+      message,
+      timestamp: new Date().toISOString(),
+      ...context,
+    }));
+  } else {
+    // In development, use more readable logs
+    console[level](`[${level.toUpperCase()}]`, message, context);
+  }
+};
+
+export const logger = {
+  info: (message, context) => log('info', message, context),
+  warn: (message, context) => log('warn', message, context),
+  error: (message, context) => log('error', message, context),
+  debug: (message, context) => {
+    if (import.meta.env.MODE !== 'production') {
+      log('debug', message, context);
+    }
+  },
+};
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── metrics.js</code> - Analytics and telemetry</summary>
+
+```javascript
+import { onCLS, onFID, onLCP, onFCP, onTTFB } from 'web-vitals';
+
+// In a real application, you would send these metrics to an analytics endpoint.
+// For this blueprint, we'll just log them to the console.
+const reportMetric = (metric) => {
+  console.log('[METRIC]', metric);
+  // Example: analytics.track(metric.name, { value: metric.value, delta: metric.delta });
+};
+
+export const WebVitalsProvider = ({ children }) => {
+  useEffect(() => {
+    onCLS(reportMetric);
+    onFID(reportMetric);
+    onLCP(reportMetric);
+    onFCP(reportMetric);
+    onTTFB(reportMetric);
+  }, []);
+
+  return children;
+};
+
+/**
+ * A simple function to track a custom event.
+ * @param {string} eventName - The name of the event to track.
+ * @param {object} eventData - Additional data associated with the event.
+ */
+export const trackEvent = (eventName, eventData = {}) => {
+    console.log(`[EVENT] ${eventName}`, eventData);
+    // Example: analytics.track(eventName, eventData);
+};
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── feature-flags.js</code> - Feature flag management</summary>
+
+```javascript
+import React, { createContext, useContext } from 'react';
+
+// In a real application, this configuration would likely come from a remote service
+// like Firebase Remote Config, LaunchDarkly, or a custom backend.
+const featureFlagsConfig = {
+  'new-dashboard-layout': true,
+  'wearable-integration': false,
+  'ai-safety-alerts': true,
+};
+
+const FeatureFlagContext = createContext(featureFlagsConfig);
+
+export const FeatureFlagProvider = ({ children }) => {
+  // Here you could fetch flags from a remote service
+  const flags = featureFlagsConfig;
+
+  return (
+    <FeatureFlagContext.Provider value={flags}>
+      {children}
+    </FeatureFlagContext.Provider>
+  );
+};
+
+/**
+ * Custom hook to check if a feature is enabled.
+ * @param {string} flagName - The name of the feature flag to check.
+ * @returns {boolean} True if the feature is enabled, false otherwise.
+ */
+export const useFeatureFlag = (flagName) => {
+  const flags = useContext(FeatureFlagContext);
+  return flags[flagName] || false;
+};
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── permissions.js</code> - User permission utilities</summary>
+
+```javascript
+// NOTE: These are client-side permission checks.
+// Authoritative security rules are always enforced on the backend by Firestore/Storage rules.
+
+/**
+ * Checks if a user has a specific role within a circle.
+ * @param {object} circleMember - The user's membership object from Firestore.
+ * @param {'owner' | 'admin' | 'member'} role - The role to check for.
+ * @returns {boolean} True if the user has the specified role or higher.
+ */
+export function hasRole(circleMember, role) {
+  if (!circleMember) return false;
+  const roles = ['member', 'admin', 'owner'];
+  const userRoleIndex = roles.indexOf(circleMember.role);
+  const requiredRoleIndex = roles.indexOf(role);
+  return userRoleIndex >= requiredRoleIndex;
+}
+
+/**
+ * Checks if a user has access to a feature based on their subscription tier.
+ * @param {object} subscription - The user's subscription object from Firestore.
+ * @param {'free' | 'premium' | 'elite'} requiredTier - The minimum tier required.
+ * @returns {boolean} True if the user's tier meets the requirement.
+ */
+export function hasSubscriptionTier(subscription, requiredTier) {
+  if (!subscription) return false;
+  const tiers = ['free', 'premium', 'elite'];
+  const userTierIndex = tiers.indexOf(subscription.tier);
+  const requiredTierIndex = tiers.indexOf(requiredTier);
+  return userTierIndex >= requiredTierIndex;
+}
+```
+
+</details>
+
+<details>
+<summary><code>│   ├── routing.js</code> - Navigation and routing helpers</summary>
+
+```javascript
+import { createSearchParams } from 'react-router-dom';
+
+/**
+ * Creates a path with query parameters.
+ * @param {string} path - The base path (e.g., '/search').
+ * @param {object} params - An object of query parameters.
+ * @returns {string} The full path with query string (e.g., '/search?q=test').
+ */
+export function createPathWithParams(path, params) {
+  const searchParams = createSearchParams(params);
+  return `${path}?${searchParams}`;
+}
+
+// Example usage:
+// const navigate = useNavigate();
+// const path = createPathWithParams('/user', { id: '123', sort: 'asc' });
+// navigate(path);
+```
+
+</details>
+
+<details>
+<summary><code>│   └── i18n.js</code> - Internationalization setup</summary>
+
+```javascript
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+// In a real app, you would load translations from files or a CMS
+const resources = {
+  en: {
+    translation: {
+      "Welcome to CircleSafe": "Welcome to CircleSafe"
+    }
+  },
+  es: {
+    translation: {
+      "Welcome to CircleSafe": "Bienvenido a CircleSafe"
+    }
+  }
+};
+
+i18n
+  // detect user language
+  .use(LanguageDetector)
+  // pass the i18n instance to react-i18next.
+  .use(initReactI18next)
+  // init i18next
+  .init({
+    debug: import.meta.env.DEV,
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false, // not needed for react as it escapes by default
+    },
+    resources: resources
+  });
+
+export default i18n;
+```
+
+</details>
 
 ├── hooks/                       # Custom React hooks
 
