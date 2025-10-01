@@ -1,4 +1,6 @@
+// This script assumes `firebase-config.js` is loaded first and has created the `firebaseConfig` object.
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -7,18 +9,9 @@ import {
     signOut
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAkuchH7qcwaJfs8QVxv_5OQB-11023hsg",
-  authDomain: "studio-9097357919-2f4fc.firebaseapp.com",
-  projectId: "studio-9097357919-2f4fc",
-  storageBucket: "studio-9097357919-2f4fc.appspot.com",
-  messagingSenderId: "1020139773469",
-  appId: "1:1020139773469:web:396ee4fc0089dc630ff0f4"
-};
-
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(window.firebaseConfig);
+const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 // Get DOM elements
