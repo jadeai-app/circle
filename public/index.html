@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Safety PWA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <div id="auth-container">
+            <!-- Registration Form -->
+            <div id="register-form">
+                <h2>Register</h2>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button id="register-button">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button id="login-button">Login</button>
+            </div>
+        </div>
+
+        <div id="user-dashboard" style="display: none;">
+            <h2>Dashboard</h2>
+            <p>Welcome, <span id="user-email"></span>!</p>
+            <button id="logout-button">Logout</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+    <!-- Firebase Config (ignored by Git) -->
+    <script src="./firebase-config.js"></script>
+    <!-- Main Application Logic -->
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
