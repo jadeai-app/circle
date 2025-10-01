@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CircleGuard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                CircleGuard
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link">Settings</a></li>
+                    <li><a href="index.html" class="nav-link">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+
+            <section class="welcome-header">
+                <h2>Welcome back, [User]!</h2>
+            </section>
+
+            <section class="status-section text-center">
+                <div class="status-circle">
+                    <div class="status-text">I'm OK</div>
+                </div>
+                <p class="check-in-timer">Next check-in: 23:59:59</p>
+                <button class="btn btn-emergency">Emergency Call</button>
+                <div class="location-toggle">
+                    <label for="location-switch">Share My Location</label>
+                    <input type="checkbox" id="location-switch" class="switch" checked>
+                </div>
+            </section>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-column-main">
+                    <section class="circle-feed-section">
+                        <div class="tabs">
+                            <button class="tab-link active">Circle</button>
+                            <button class="tab-link">Activity</button>
+                            <button class="tab-link">Vault</button>
+                        </div>
+                        <div class="circle-feed">
+                            <div class="feed-item">
+                                <img src="placeholder_avatar.png" alt="Avatar" class="avatar">
+                                <div class="feed-item-content">
+                                    <p><strong>Jane Doe</strong> checked in.</p>
+                                    <small>5 minutes ago</small>
+                                </div>
+                            </div>
+                            <div class="feed-item">
+                                <img src="placeholder_avatar.png" alt="Avatar" class="avatar">
+                                <div class="feed-item-content">
+                                    <p><strong>John Smith</strong> is active.</p>
+                                    <small>Online now</small>
+                                 </div>
+                            </div>
+                        </div>
+                    </section>
+
+                     <section class="events-section">
+                        <h3>Upcoming Events</h3>
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-date"><span>OCT</span><span>28</span></div>
+                                <div class="event-details">
+                                    <h4>Hike at Mount Tam</h4>
+                                    <p>Meeting at the trailhead at 9 AM.</p>
+                                </div>
+                                <button class="btn btn-secondary btn-sm">RSVP</button>
+                            </div>
+                             <div class="event-item">
+                                <div class="event-date"><span>NOV</span><span>04</span></div>
+                                <div class="event-details">
+                                    <h4>Neighborhood Potluck</h4>
+                                    <p>Community park, 5 PM. Bring a dish!</p>
+                                </div>
+                                <button class="btn btn-secondary btn-sm">RSVP</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="dashboard-column-side">
+                    <section class="contacts-section">
+                        <h3>My Contacts</h3>
+                        <ul class="contact-list">
+                            <li>Jane Doe <div class="contact-actions"><a href="#">📞</a><a href="#">💬</a></div></li>
+                            <li>John Smith <div class="contact-actions"><a href="#">📞</a><a href="#">💬</a></div></li>
+                            <li>Local Police <div class="contact-actions"><a href="#">📞</a></div></li>
+                        </ul>
+                    </section>
+
+                    <section class="map-section">
+                        <h3>Circle Map</h3>
+                        <div class="map-placeholder">
+                           <!-- Map will be rendered here -->
+                           <p>Map visualization</p>
+                        </div>
+                        <div class="location-toggle">
+                            <label for="map-location-switch">Show My Location</label>
+                            <input type="checkbox" id="map-location-switch" class="switch" checked>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

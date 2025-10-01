@@ -1,0 +1,78 @@
+/*
+ * CircleGuard Forms Styles
+ * Author: Jules
+ */
+
+.form-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 80px; /* Space for header */
+}
+
+.form-container {
+    background-color: var(--secondary-dark);
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid var(--border-color);
+}
+
+.form-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-light);
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-teal);
+    box-shadow: 0 0 0 2px rgba(20, 200, 180, 0.3);
+}
+
+.form-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+.form-footer {
+    margin-top: 25px;
+}
+
+.form-footer p {
+    color: var(--text-muted);
+}
+
+.form-footer a {
+    color: var(--accent-teal);
+    font-weight: 500;
+}

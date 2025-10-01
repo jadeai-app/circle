@@ -1,0 +1,259 @@
+/*
+ * CircleGuard Dashboard Styles
+ * Author: Jules
+ */
+
+/* --- Dashboard Layout --- */
+.dashboard-main {
+    padding-top: 100px; /* Space for fixed header */
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.dashboard-column-main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.dashboard-column-side {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* --- Welcome Header --- */
+.welcome-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+/* --- Status Section --- */
+.status-section {
+    background-color: var(--secondary-dark);
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.status-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-dark);
+    border: 10px solid #2E7D32; /* Green for OK */
+    box-shadow: 0 0 20px #2E7D32;
+}
+
+.status-circle .status-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.check-in-timer {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-top: 20px;
+}
+
+.btn-emergency {
+    background-color: #C62828; /* Red for emergency */
+    color: var(--white);
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    margin-top: 20px;
+    border: none;
+}
+
+.btn-emergency:hover {
+    background-color: #B71C1C;
+}
+
+.location-toggle {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Custom Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+input:checked + .slider {
+  background-color: var(--accent-teal);
+}
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+
+/* --- Contacts & Map & Events (Side Column & Main) --- */
+.contacts-section, .map-section, .events-section, .circle-feed-section {
+    background-color: var(--secondary-dark);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+/* Contacts List */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-actions a {
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+
+/* Map Placeholder */
+.map-placeholder {
+    height: 200px;
+    background-color: var(--primary-dark);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+/* --- Circle Feed --- */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tab-link.active {
+    color: var(--accent-teal);
+    border-bottom: 2px solid var(--accent-teal);
+}
+
+.feed-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.feed-item:last-child {
+    border-bottom: none;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.feed-item-content p {
+    margin: 0;
+    color: var(--text-light);
+}
+.feed-item-content small {
+    color: var(--text-muted);
+}
+
+/* --- Events List --- */
+.event-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-date {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    width: 50px;
+}
+
+.event-date span {
+    display: block;
+}
+
+.event-date span:first-child {
+    font-size: 0.8rem;
+    color: var(--accent-teal);
+}
+
+.event-date span:last-child {
+    font-size: 1.5rem;
+}
+
+.event-details {
+    flex-grow: 1;
+}
+
+.event-details h4 {
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.event-details p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.btn-sm {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
