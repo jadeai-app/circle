@@ -1,16 +1,21 @@
 # Dependencies
 /node_modules
 
-# Build output
-/public/dist
+# Build artifacts
+/dist
 
-# Logs
+# Log files
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Misc
-.DS_Store
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Local secrets
-public/firebase-config.js
+# Scratch files
+/jules-scratch/
